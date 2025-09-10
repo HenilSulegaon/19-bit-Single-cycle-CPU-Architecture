@@ -6,7 +6,7 @@ module alu #(parameter WIDTH=19)
   
   assign zero = (!alu_out);
   
-  always_ff @(a,b,alu_cntrl)
+  always_ff @(a,b,alu_cntrl) // this block statement are written after design of main decoder and alu decoder. so now left empty.
     begin
       case(alu_cntrl)
         4'b0000 : alu_out <= a + b;    // ADD,ADDI
