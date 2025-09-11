@@ -163,10 +163,49 @@ done: muli x7,x3,a
 <img width="1895" height="845" alt="beq instr" src="https://github.com/user-attachments/assets/c37e11cd-a4e5-4f48-9472-1c1350de6730" />
 
 
-### **Note**: I have successfully verified , if you want to see you can check my eda playground
+### **Note**: I have successfully verified all the instructions, if you want to see you can check my eda playground-
 [![EDA Playground](https://img.shields.io/badge/Tool-EDA_Playground-blue.svg)](https://www.edaplayground.com/x/9x3D/)
 
 
-  
+# TASK PROGRESS LOG
+
+My approach while working on this project was to follow the standard ASIC design flow.
+To achieve this, I first implemented a RISC-V32 CPU, which helped me understand the standard ISA structure. Based on that knowledge, I then designed my own 19-bit Custom Instruction Set Architecture.”
+
+  ## Day-1 (Specification)
+  - Collected specifications for 19-bit CPU design from Vicharak
+  - List down which type of instructions to be implemented (R,I,B,J,LW,SW)
+
+  ## Day-2 (Architecture)
+  - Consider one simple assembly code
+  - take one instruction at a time then decode it and required blocks are placed in architech.
+  - Following this step-by-step approach, I successfully implemented the final 19-bit CPU architecture within 2 days of dedicated work.
+
+  ## Day-3 (RTL design)
+  - Design datapath using Systemverilog HDL
+  - Datapath includes adder, alu, mux, regfile, data memory, instr.memory.
+
+  ## Day-4 (RTL Coding)
+  - Design controller which decode instruction and generate required control signals.
+  - Controller includes main decoder and alu decoder.
+
+  ## Day-5 (Verification)
+  - Debug and verified design
+  - This process was time-consuming, but I thoroughly enjoyed it.
+  - Till now i have implemented simple instr. and verifeid all.
+
+  ## Day-6 (Synthesis)
+  - Perform Synthesis on Xillinx Vivado
+
+  ## Day-7 (Update)
+  - added Branch and jump type Instructions
+  - it was amazing experience to implemet this.
+  - Main logic is to control pc address by pctarget adder and pcmux.
+  - Sign extend also plays a crucial role in this.
+
+  ## Day-8 (Final verification)
+  - Verified each instruction using dedicated assembly snippets (converted into machine code).
+  - Stored test programs in instruction memory for execution.
+  - Tested with hex file loading to ensure correct instruction fetch and execution.
 
 
