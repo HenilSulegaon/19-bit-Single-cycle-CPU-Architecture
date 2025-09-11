@@ -87,7 +87,7 @@ I have designed a custom 19-bit ISA for this project, taking inspiration and ref
 |  imm7:3  |  rs2     |   rs1    |  imm2:0 |   op    |   B-type     |
 |  imm10:0 |          |          |    rd   |   op    |   J-type     |
 
-### Instruction Encoding
+  ### Instruction Encoding
 
 |   instr  |   Type   |   Opcode | funct5  |alucontrol|  
 |:--------:|:--------:|:--------:|:-------:|:--------:|
@@ -118,3 +118,55 @@ I have designed a custom 19-bit ISA for this project, taking inspiration and ref
 |   BEQ    |    B     |   01000  |   -     |    0001  |
 |   BNE    |    B     |   01110  |   -     |    0001  |
 |   JAL    |    J     |   10000  |   -     |     -    |
+
+## ▶️ Simulation & Testing
+- Written in SystemVerilog HDL
+- Simulated using **eda Playground**
+- Synthesized on **Xilinx Vivado**
+- All insructions are Verified by assembly code snippet
+
+## Instruction Verify by Waveform Analysis:
+
+   ```assembly
+addi x2,x0,7
+addi x3,x0,5
+mul x4,x3,x2 
+```
+
+### addi,mul output waveform
+<img width="1878" height="846" alt="MUL inst" src="https://github.com/user-attachments/assets/9c9893a8-4830-49d6-aa9d-05709c2e8ed9" />
+
+---
+
+```assembly
+addi x2,x0,7
+addi x3,x0,5
+rem x5,x2,x3
+div x6,x2,x3
+sub x7,x2,x3  
+```
+
+### rem,div,sub output waveform Analysis
+<img width="1862" height="837" alt="rem,div,sub instr" src="https://github.com/user-attachments/assets/856f5066-05d9-42a6-8f3f-3e0d18280879" />
+
+---
+
+```assembly
+addi x3,x0,9
+addi x4,x0,9
+beq x3,x4,done
+andi x5,x3,5
+add x1,x3,x4
+done: muli x7,x3,a 
+```
+### beq output waveform Analysis
+<img width="1895" height="845" alt="beq instr" src="https://github.com/user-attachments/assets/c37e11cd-a4e5-4f48-9472-1c1350de6730" />
+
+
+### **Note**: I have successfully verified , if you want to see you can check my eda playground
+[![EDA Playground](https://img.shields.io/badge/Tool-EDA_Playground-blue.svg)](https://www.edaplayground.com/x/9x3D/)
+
+
+  
+
+
